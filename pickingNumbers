@@ -1,0 +1,21 @@
+function pickingNumbers(a) {
+  // Write your code here
+
+  let array = a.sort((a, b) => {
+    return a - b;
+  });
+
+  let i = 0;
+  let j = 1;
+
+  while (i < array.length && j < array.length) {
+    if (Math.abs(array[i] - array[j]) > 1) {
+      i++;
+      j++;
+    } else {
+      j++;
+    }
+  }
+
+  return Math.abs(i - j);
+}

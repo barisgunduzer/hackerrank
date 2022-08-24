@@ -12,13 +12,11 @@ function sockMerchant(n, ar) {
     }
   });
 
-  console.log(groupedSocks);
-
   const pairedSocks = Object.values(groupedSocks).filter((value) => value > 1);
 
   if (pairedSocks.length === 0) return 0;
 
-  pairedSocks.reduce((prev, next) => prev + next);
+  return pairedSocks.reduce((prev, next) => prev + next);
 }
 
-console.log(sockMerchant(9, [10, 20, 30]));
+console.log(sockMerchant(2, [10, 10, 20, 30]));
